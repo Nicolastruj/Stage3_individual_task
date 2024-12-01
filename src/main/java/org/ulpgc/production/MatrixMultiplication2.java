@@ -7,9 +7,9 @@ import java.util.Random;
 
 public class MatrixMultiplication2 {
 
-    static RealMatrix a; // Matriz A
-    static RealMatrix b; // Matriz B
-    static RealMatrix c; // Matriz de resultados
+    static RealMatrix a;
+    static RealMatrix b;
+    static RealMatrix c;
 
     public void initializeMatrices(int size) {
         Random random = new Random();
@@ -24,14 +24,13 @@ public class MatrixMultiplication2 {
             }
         }
 
-        // Crear matrices como RealMatrix
         a = MatrixUtils.createRealMatrix(dataA);
         b = MatrixUtils.createRealMatrix(dataB);
-        c = MatrixUtils.createRealMatrix(new double[size][size]); // Matriz inicializada a ceros
+        c = MatrixUtils.createRealMatrix(new double[size][size]);
     }
 
     public int multiplyMatrices() {
-        c = a.multiply(b); // Multiplicación vectorizada
+        c = a.multiply(b);
         return 0;
     }
 }

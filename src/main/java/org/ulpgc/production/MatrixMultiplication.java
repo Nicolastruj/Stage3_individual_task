@@ -40,7 +40,7 @@ public class MatrixMultiplication {
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         for (int i = 0; i < n; i++) {
-            int finalI = i; // Variable final para uso en lambda
+            int finalI = i;
             executor.submit(() -> {
                 for (int j = 0; j < n; j++) {
                     for (int k = 0; k < n; k++) {
@@ -52,7 +52,6 @@ public class MatrixMultiplication {
 
         executor.shutdown();
         while (!executor.isTerminated()) {
-            // Espera a que todos los hilos terminen
         }
 
         return 0;
